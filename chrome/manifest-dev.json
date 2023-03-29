@@ -1,0 +1,94 @@
+{
+	"manifest_version": 2,
+	"name": "海汇插件集",
+	"description": "基于vue开发的chrome插件",
+	"version": "1.0.0",
+	"browser_action": {
+		"default_title": "Harvest",
+		"default_icon": "/logo.png",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"webRequest",
+		"webRequestBlocking",
+		"notifications",
+		"contextMenus",
+		"tabs",
+		"webRequest",
+		"http://*/",
+		"https://*/",
+		"<all_urls>",
+		"storage",
+		"activeTab",
+		"cookies"
+	],
+	"background": {
+		"scripts": ["js/background.js"],
+		"persistent": true
+	},
+	"icons": {
+		"16": "/logo.png",
+		"48": "/logo.png",
+		"128": "/logo.png"
+	},
+	"content_security_policy": "connect-src *; script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"content_scripts": [
+		{
+			"matches": [
+				"http://127.0.0.1:5500/%E6%B5%B7%E6%B1%87%E6%8F%92%E4%BB%B6%E9%9B%86/src/chrome/inject/components/EbayShopAdminImportExcel/test.html",
+				"http://127.0.0.1:5500/%E6%B5%B7%E6%B1%87%E6%8F%92%E4%BB%B6%E9%9B%86/src/chrome/content/components/Shopee/test.html",
+				"http://127.0.0.1:5500/src/chrome/content/components/Ebay/Research/test.html",
+				"https://s.1688.com/youyuan/index.htm?*",
+				"https://*/sh/research?*",
+				"https://*/sch/*",
+				"https://*/itm/*",
+				"https://*/bin/purchaseHistory?*",
+				"https://*/ship/rt?*",
+				"https://*/ship/rt/*",
+				"https://*/b/*",
+
+				"https://ehire.51job.com/Candidate/SearchResumeLatestVersion.aspx",
+				"https://www.chanmama.com/*",
+				"https://business.oceanengine.com/*",
+				"https://ad.oceanengine.com/*",
+				"https://union.bytedance.com/*",
+				"https://creator.douyin.com/*",
+				"https://compass.jinritemai.com/talent",
+				"https://erp.datacaciques.com/*",
+				"http://127.0.0.1:5500/*",
+				"https://buyin.jinritemai.com/*",
+
+				"https://shopee.com.my/*",
+				"https://shopee.com.br/*",
+				"https://br.xiapibuy.com/*",
+				"https://shopee.co.th/*",
+				"https://shopee.tw/*",
+				"https://shopee.co.id/*",
+				"https://shopee.sg/*",
+				"https://shopee.ph/*",
+				"https://shopee.vn/*",
+				"https://s.1688.com/youyuan/index.htm?tab=imageSearch*",
+
+				"https://www.dianxiaomi.com/order/index.htm",
+
+				"https://www.instagram.com/*",
+
+				"https://www.cnblogs.com/onlyfu/p/9837343.html",
+				"https://mktg.ebay.com.au/ppl/create",
+				"file:///Users/qian/Downloads/test.html",
+
+				"https://console.captainbi.com/app/*",
+				
+				"https://www.ebay.com.au/fdbk/feedback_profile/*"
+			],
+			"css": [
+				"css/content.css"
+			],
+			"js": [
+				"js/content.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"web_accessible_resources": ["fonts/*", "js/content.js", "css/content.css", "js/chunk-common/chunk-vendors.js", "js/chunk-vendors/chunk-vendors.js", "css/chunk-common/chunk-vendors.css", "css/chunk-vendors/chunk-vendors.css"]
+}
