@@ -1,0 +1,140 @@
+$color-primary: #409EFF;
+$font-size-big: 16px;
+
+.vxe-table, .vxe-table.size--small {
+  font-size: 14px;
+  color: rgba(0, 0, 0, .85);
+
+  table {
+    border: none;
+  }
+
+  .vxe-header--column {
+    font-weight: 500;
+  }
+
+  .vxe-table--header-wrapper {
+    background-color: #FAFAFA !important;
+  }
+
+  // 狗日的不用border做，用background-image做，找了半天，还是看源码找出来的
+  &.border--default,
+  &.border--inner {
+    .vxe-header--column,
+    .vxe-body--column,
+    .vxe-footer--column {
+      background-image: linear-gradient(#F0F0F0, #F0F0F0);
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+      background-position: right bottom;
+    }
+
+    .vxe-body--row {
+      &.row--hover {
+        background-color: #FAFAFA !important;
+      }
+
+      &.row--current {
+        background-color: #f5f7fa !important;
+      }
+    }
+    .vxe-body--column, .vxe-header--column {
+      &.col--hover {
+        background-color: #FAFAFA !important;
+      }
+      &.col--current {
+        background-color: #f5f7fa !important;
+      }
+    }
+  }
+}
+
+.el-card {
+  &.has-tools .el-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+    >span {
+      font-size: $font-size-big;
+      color: #000;
+    }
+  }
+  &.no-header .el-card__header {
+    display: none;
+  }
+}
+
+.table-box {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+
+  &__table {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .el-card__body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      .table-wrapper {
+        flex: 1;
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+      .app-pagination {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.hover-link {  
+  &:hover {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
+.link {
+  color: $color-primary;
+  text-decoration: underline;
+}
+
+.vxe-table--tooltip-wrapper {
+  z-index: 99999999 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.vxe-table.border--default .vxe-body--row.row--current, .vxe-table.border--inner .vxe-body--row.row--current, .vxe-table.size--small.border--default .vxe-body--row.row--current, .vxe-table.size--small.border--inner .vxe-body--row.row--current {
+  background-color: #b7cef1 !important;
+}
+
+// 文本溢出...
+.ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+// 2/3行溢出...
+.ellipsis--l2,
+.ellipsis--l3 {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+}
+.ellipsis--l2 {
+	-webkit-line-clamp: 2;
+}
+.ellipsis--l3 {
+	-webkit-line-clamp:3
+}
